@@ -8,7 +8,6 @@ Rails.application.routes.draw do
 
   root 'microposts#index'
 
-  resources :users
   resources :microposts, only: [:index]
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
