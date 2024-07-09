@@ -1,0 +1,8 @@
+vi:
+  hello: "Xin chào"
+
+  product:
+    created: "Sản phẩm được tạo thành công."
+    updated: "Sản phẩm được cập nhật thành công."
+    destroyed: "Sản phẩm được xóa thành công."
+    not_found: "Không tìm thấy sản phẩm."
