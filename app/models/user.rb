@@ -1,12 +1,13 @@
 class User < ApplicationRecord
-  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
-
   before_save :downcase_email
 
-  validates :name, presence: true, length: {maximum: 50}
-  validates :email, presence: true, length: {maximum: 255},
-            format: {with: VALID_EMAIL_REGEX}, uniqueness: true
-  validate :birthday_within_last_100_years
+  validates :name, presence: true,
+            length: {maximum: Settings.user.name.max_length}
+  validates :email, presence: true,
+            length: {maximum: Settings.user.email.max_length},
+            format: {with: Settings.user.email.valid_regex},
+            uniqueness: true
+  validate :birthday_condition
 
   has_secure_password
 
@@ -16,10 +17,19 @@ class User < ApplicationRecord
     email.downcase!
   end
 
-  def birthday_within_last_100_years
-    if birthday.present? &&
-       (birthday < 100.years.ago.to_date || birthday > Time.zone.today)
-      errors.add(:birthday, "must be within the last 100 years")
-    end
+  def birthday_condition
+    return if birthday.blank? || birthday_within_limits?
+
+    errors.add(:birthday,
+               I18n.t("user.birthday.out_of_range",
+                      min_age: Settings.user.birthday.min_age,
+                      max_age: Settings.user.birthday.max_age))
+  end
+
+  def birthday_within_limits?
+    min_date = Settings.user.birthday.max_age.years.ago.to_date
+    max_date = Settings.user.birthday.min_age.years.ago.to_date
+
+    birthday.between?(min_date, max_date)
   end
 end

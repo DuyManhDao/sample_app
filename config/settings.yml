@@ -1,0 +1,9 @@
+user:
+  name:
+    max_length: 50
+  email:
+    max_length: 255
+    valid_regex: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  birthday:
+    min_age: 18
+    max_age: 100
