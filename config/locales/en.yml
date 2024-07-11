@@ -36,3 +36,6 @@ en:
     updated: "Product was successfully updated."
     destroyed: "Product was successfully destroyed."
     not_found: "Product not found."
+  user:
+    birthday:
+      out_of_range: "Must be between %{min_age} and %{max_age} years old."
