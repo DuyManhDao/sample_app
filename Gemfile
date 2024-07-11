@@ -35,6 +35,7 @@ gem "jbuilder"
 
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html]
 # gem "bcrypt", "~> 3.1.7"
+gem "bcrypt", "~> 3.1.20"
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: %i(mingw mswin x64_mingw jruby)
@@ -42,6 +43,7 @@ gem "tzinfo-data", platforms: %i(mingw mswin x64_mingw jruby)
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
 gem "bootstrap-sass", "3.4.1"
+gem "config"
 gem "sassc-rails"
 # Use Sass to process CSS
 # gem "sassc-rails"
@@ -59,6 +61,7 @@ end
 
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
+  gem "byebug", "~> 11.1"
   gem "rails-i18n"
   gem "web-console"
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]

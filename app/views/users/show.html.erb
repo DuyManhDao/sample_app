@@ -1,9 +1,12 @@
-<% if flash[:alert] %>
+<% if flash[:warning] %>
   <div class="alert alert-danger">
-    <%= flash[:alert] %>
+    <%= flash[:warning] %>
   </div>
 <% end %>
 
 <% provide(:title, @user.name) %>
-<h1>Hello <%= @user.name %>!</h1>
-<p>Email: <%= @user.email %></p>
+<h1>
+  <%= gravatar_for @user %>
+  <%= @user.name %>
+</h1>
+
