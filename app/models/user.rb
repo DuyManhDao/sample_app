@@ -5,7 +5,7 @@ class User < ApplicationRecord
             length: {maximum: Settings.user.name.max_length}
   validates :email, presence: true,
             length: {maximum: Settings.user.email.max_length},
-            format: {with: Settings.user.email.valid},
+            format: {with: Settings.user.email.valid_regex},
             uniqueness: true
   validate :birthday_condition
 
