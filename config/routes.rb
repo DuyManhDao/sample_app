@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get "/login", to: "sessions#new"
+  post "/login", to: "sessions#create"
+  delete "/logout", to: "sessions#destroy"
   resources :products
   get "demo_partials/edit"
   get "demo_partials/new"
@@ -9,7 +12,10 @@ Rails.application.routes.draw do
   root "microposts#index"
 
   resources :microposts, only: [:index]
-  resources :users
+
+  get "/signup", to: "users#new"
+  post "/signup", to: "users#create"
+  resources :users, only: %i(index new create show)
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

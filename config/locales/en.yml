@@ -36,3 +36,19 @@ en:
     updated: "Product was successfully updated."
     destroyed: "Product was successfully destroyed."
     not_found: "Product not found."
+  user:
+    birthday:
+      out_of_range: "Must be between %{min_age} and %{max_age} years old."
+  the_form_contains: "The form contains"
+  errors:
+    form_error: "error"
+  confirmation: "Type password again to confirm"
+  welcome_to_the_sample_app!: "Welcome to the sample app!"
+  invalid_email_password_combination: "Your password is WRONG. Type again!"
+  title: "SAMPLE APP"
+  home: "Home"
+  help: "Help"
+  account: "Account"
+  users: "Users"
+  login: "Log in"
+  logout: "Log out"
