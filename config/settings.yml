@@ -7,3 +7,9 @@ user:
   birthday:
     min_age: 18
     max_age: 100
+  avatar:
+    size: 50
+    size_in_profile: 80
+digits:
+  digit_6: 6
+page_10: 10
