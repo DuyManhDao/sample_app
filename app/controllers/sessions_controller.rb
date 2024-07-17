@@ -4,7 +4,12 @@ class SessionsController < ApplicationController
   def create
     user = User.find_by(email: params.dig(:session, :email)&.downcase)
     if user.try(:authenticate, params.dig(:session, :password))
-      handle_successful_login(user)
+      if user.activated
+        handle_successful_login(user)
+      else
+        flash[:warning] = t("user.not_activated")
+        redirect_to root_url
+      end
     else
       handle_failed_login
     end

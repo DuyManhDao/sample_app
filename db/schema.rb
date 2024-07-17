@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_07_16_104528) do
+ActiveRecord::Schema[7.0].define(version: 2024_07_17_030258) do
   create_table "microposts", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.text "context"
     t.datetime "created_at", null: false
@@ -33,6 +33,9 @@ ActiveRecord::Schema[7.0].define(version: 2024_07_16_104528) do
     t.date "birthday"
     t.string "remember_digest"
     t.boolean "admin", default: false
+    t.string "activation_digest"
+    t.boolean "activated"
+    t.datetime "activated_at"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
