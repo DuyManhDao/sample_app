@@ -18,10 +18,10 @@ class UsersController < ApplicationController
     @user = User.new user_params
 
     if @user.save
-      reset_session
-      log_in @user
-      flash[:success] = t("welcome_to_the_sample_app!")
-      redirect_to @user
+      @user.send_activation_email
+      flash[:info] = t("user.activate")
+
+      redirect_to root_path, status: :see_other
     else
       render :new, status: :unprocessable_entity
     end

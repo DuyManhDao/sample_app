@@ -50,6 +50,10 @@ en:
     delete: "Delete"
     delete_confirm: "You sure?"
     update_title: "Update your profile"
+    not_activated: "Account not activated. Please check your email for the activation link!"
+    activate: "Please check your email to activate your account."
+    activated: "Account activated!"
+    invalid_activation: "Invalid activation link"
   the_form_contains: "The form contains"
   errors:
     form_error: "error"
@@ -66,3 +70,6 @@ en:
   logout: "Log out"
   change: "change"
   sign_up: "Sign up"
+  user_mailer:
+    account_activation:
+      subject: "Account activation"
