@@ -40,13 +40,15 @@ en:
     birthday:
       out_of_range: "Must be between %{min_age} and %{max_age} years old."
     not_found: "User not found!"
+    new: "New user? "
     edit: "Edit user"
     save_changes: "Save changes"
     create_account: "Create your account"
-    signup: "Signup"
+    signup: "Sign up"
     updated: "Profile updated"
     logged_in?: "Please log in."
     current_user?: "You cannot edit this account."
+    forgot_password: "Forgot password"
     delete: "Delete"
     delete_confirm: "You sure?"
     update_title: "Update your profile"
@@ -54,6 +56,7 @@ en:
     activate: "Please check your email to activate your account."
     activated: "Account activated!"
     invalid_activation: "Invalid activation link"
+    in_activated: "User is in actived!"
   the_form_contains: "The form contains"
   errors:
     form_error: "error"
@@ -69,7 +72,13 @@ en:
   login: "Log in"
   logout: "Log out"
   change: "change"
-  sign_up: "Sign up"
   user_mailer:
     account_activation:
       subject: "Account activation"
+    password_reset:
+      subject: "Password reset"
+  password_reset:
+    sent: "Email sent with password reset instructions"
+    sent_fail: "Email address not found"
+    update_success: "Your password is successfully updated"
+  reset_password: "Reset password"

@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   get "/signup", to: "users#new"
   post "/signup", to: "users#create"
   resources :users, only: %i(index new create show edit update destroy)
+  resources :password_resets, only: %i(new edit create update)
   resources :account_activations, only: :edit
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
