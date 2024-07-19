@@ -10,6 +10,7 @@ module RailsTutorial
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
+    config.active_storage.variant_processor = :mini_magick
 
     I18n.available_locales = %i[en vi]
 

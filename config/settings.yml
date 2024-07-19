@@ -13,4 +13,11 @@ user:
 digits:
   digit_6: 6
 page_10: 10
+digit_140: 140
+page_10: 10
+digit_50: 50
 time_to_expire: 2
+image_format: "image/jpeg,image/gif,image/png"
+image:
+  width: 500
+  height: 500
