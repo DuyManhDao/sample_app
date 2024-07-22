@@ -8,7 +8,9 @@ class UsersController < ApplicationController
     @pagy, @users = pagy User.newest_first, items: Settings.page_10
   end
 
-  def show; end
+  def show
+    @page, @microposts = pagy @user.microposts.newest, items: Settings.page_10
+  end
 
   def new
     @user = User.new
@@ -40,9 +42,9 @@ class UsersController < ApplicationController
 
   def destroy
     if @user.destroy
-      flash[:success] = "User deleted"
+      flash[:success] = t("user.deleted")
     else
-      flash[:danger] = "Delete fail!"
+      flash[:danger] = t("user.delete_fail")
     end
     redirect_to users_path
   end
@@ -62,18 +64,18 @@ class UsersController < ApplicationController
     redirect_to root_path
   end
 
-  def logged_in_user
-    return if logged_in?
+  # def logged_in_user
+  #   return if logged_in?
 
-    store_location
-    flash[:danger] = t "user.logged_in?"
-    redirect_to login_url
-  end
+  #   store_location
+  #   flash[:danger] = t "user.logged_in?"
+  #   redirect_to login_url
+  # end
 
   def correct_user
     return if current_user?(@user)
 
-    flash[:error] = t "user.current_user?"
+    flash[:error] = t("user.current_user?")
     redirect_to root_url
   end
 

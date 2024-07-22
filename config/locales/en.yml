@@ -32,10 +32,16 @@
 en:
   hello: "Hello world"
   product:
+    new: "New product"
+    show: "Show this product"
+    edit: "Edit this product"
+    none: "No products"
     created: "Product was successfully created."
     updated: "Product was successfully updated."
+    destroy: "Destroy this product"
     destroyed: "Product was successfully destroyed."
     not_found: "Product not found."
+    back_to_all: "Back to products"
   user:
     birthday:
       out_of_range: "Must be between %{min_age} and %{max_age} years old."
@@ -57,6 +63,8 @@ en:
     activated: "Account activated!"
     invalid_activation: "Invalid activation link"
     in_activated: "User is in actived!"
+    deleted: "User deleted!"
+    delete_fail: "Delete fail!"
   the_form_contains: "The form contains"
   errors:
     form_error: "error"
@@ -82,3 +90,20 @@ en:
     sent_fail: "Email address not found"
     update_success: "Your password is successfully updated"
   reset_password: "Reset password"
+  activate: "Activate"
+  micropost:
+    created: "Micropost created!"
+    deleted: "Micropost deleted!"
+    delete_fail: "Delete fail!"
+    invalid: "Micropost invalid!"
+  image:
+    format_invalid: "must be a valid image format"
+    size_invalid: "should be less than 5 MB"
+  micropost:
+    post: "Post"
+    text_area: "Compose new micropost..."
+    confirm: "You sure?"
+  confirmation: "Confirmation"
+  password:
+    update: "Update password"
+  submit: "Submit"
