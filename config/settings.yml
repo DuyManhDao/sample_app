@@ -19,5 +19,6 @@ digit_50: 50
 time_to_expire: 2
 image_format: "image/jpeg,image/gif,image/png"
 image:
+  size: 5
   width: 500
   height: 500

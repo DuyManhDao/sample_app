@@ -36,7 +36,7 @@ class MicropostsController < ApplicationController
   end
 
   def handle_successful_save
-    flash[:success] = t("micropost.created")
+    flash[:success] = t "micropost.created"
     redirect_to root_url
   end
 
