@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'relationships/create'
+  get 'relationships/destroy'
   get "/login", to: "sessions#new"
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
@@ -13,10 +15,16 @@ Rails.application.routes.draw do
 
   get "/signup", to: "users#new"
   post "/signup", to: "users#create"
-  resources :users, only: %i(index new create show edit update destroy)
+
   resources :password_resets, only: %i(new edit create update)
   resources :account_activations, only: :edit
   resources :microposts, only: %i(create destroy)
+  resources :users do
+    member do
+      get :following, :followers
+    end
+  end
+  resources :relationships, only: %i(create destroy)
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

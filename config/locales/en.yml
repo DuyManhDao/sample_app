@@ -96,14 +96,15 @@ en:
     deleted: "Micropost deleted!"
     delete_fail: "Delete fail!"
     invalid: "Micropost invalid!"
-  image:
-    format_invalid: "must be a valid image format"
-    size_invalid: "should be less than 5 MB"
-  micropost:
     post: "Post"
     text_area: "Compose new micropost..."
     confirm: "You sure?"
+  image:
+    format_invalid: "must be a valid image format"
+    size_invalid: "should be less than 5 MB"
   confirmation: "Confirmation"
   password:
     update: "Update password"
   submit: "Submit"
+  relationship:
+    not_found: "Relationship not found!"
